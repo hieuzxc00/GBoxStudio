@@ -1,0 +1,380 @@
+.rentalstudio {
+    .container {
+        .wrap {
+            display: grid;
+            grid-template-columns: 260px auto;
+            column-gap: 50px;
+            border-bottom: 1px solid $black-txt-cl;
+            padding-bottom: 80px;
+            .rental {
+                padding: 74px 20px;
+                height: 640px;
+                background: $grey-cl;
+            
+                &__studio {
+                    max-width: 120px;
+                    max-height: 118px;
+                }
+            
+                &__title {
+                    margin-top: 27px;
+                    margin-bottom: 13px;
+            
+                    &-name {
+                        @include text(32px, 'extra', var(--lh3048), -0.8px, $white-cl, capitalize);
+                    }
+                }
+            
+                &__desc {
+                    &-title {
+                        margin-bottom: 4px;
+                        @include text(var(--fs12), 'pr', var(--lh3048), 2.4px, $white-cl, uppercase);
+                    }
+            
+                    &-content {
+                        span {
+                            display: block;
+                            @include text(14px, 'pr', 20px, 0, $white-cl, normal);
+                        }
+                    }
+                }
+            }
+            
+            .from-wrap {
+                .company-detail {
+                    .title-detail {
+                        padding-top: 66px;
+                        padding-bottom: 13px;
+                    }
+            
+                    .form {
+                        display: grid;
+                        grid-template-columns: repeat(2, 230px);
+                        column-gap: 70px;
+            
+                        &__left,
+                        &__right {
+                            .form-group {
+                                label {
+                                    display: block;
+                                    margin-bottom: -23px;
+                                    @include text(var(--fs12), 'pr', 66px, 0, $black-txt-cl, capitalize);
+                                }
+            
+                                input {
+                                    width: 100%;
+                                    font-family: 'pr';
+                                    color: $black-txt-cl;
+                                    font-size: 14px;
+                                    border: none;
+                                    outline: none;
+                                    background: none;
+                                    border-bottom: 1px solid $black-txt-cl;
+                                }
+            
+                                textarea {
+                                    font-family: 'pr';
+                                    color: $black-txt-cl;
+                                    font-size: 14px;
+                                    margin-top: 23px;
+                                    width: 100%;
+                                    height: 89px;
+                                    resize: none;
+                                    background: none;
+                                    outline: none;
+                                    border: 1px solid $black-txt-cl;
+                                }
+                            }
+                        }
+                    }
+                }
+            
+                .booking-detail {
+                    padding-top: 30px;
+            
+                    .studio {
+                        margin-top: 5px;
+            
+                        &__title {
+                            @include text(var(--fs12), 'pr', 66px, 0, $black-txt-cl, capitalize);
+                        }
+            
+                        &__list {
+                            margin-top: -10px;
+                            display: grid;
+                            grid-template-columns: repeat(4, 38px);
+                            column-gap: 20px;
+            
+                            &-item {
+                                width: 100%;
+                                height: 38px;
+                                border: 1px solid #464646;
+                                background: $black-txt-cl;
+                                cursor: pointer;
+                                position: relative;
+            
+                                span {
+                                    @include mid(false);
+                                    @include text(24px, 'DINBold', 0, -0.6px, #b4b4b4, normal);
+                                }
+            
+                                &.active {
+                                    background: $main-cl;
+            
+                                    span {
+                                        color: $black-txt-cl;
+                                    }
+                                }
+                            }
+                        }
+                    }
+            
+                    .form {
+                        max-width: 530px;
+            
+                        &__top {
+                            display: grid;
+                            grid-template-columns: repeat(2, 230px);
+                            column-gap: 70px;
+            
+                            .form-group {
+                                textarea {
+                                    font-family: 'pr';
+                                    color: $black-txt-cl;
+                                    font-size: 14px;
+                                    width: 100%;
+                                    height: 89px;
+                                    resize: none;
+                                    background: none;
+                                    outline: none;
+                                    border: 1px solid $black-txt-cl;
+                                }
+            
+                                .note {
+                                    font-style: italic;
+                                    line-height: 15px;
+                                    text-transform: none;
+                                    width: 295px;
+                                }
+                            }
+                        }
+            
+                        &__mid {
+                            margin-top: -20px;
+            
+                            &-item {
+                                position: relative;
+                                display: grid;
+                                grid-template-columns: 230px 230px;
+                                column-gap: 70px;
+            
+                                .form-group {
+                                    input[type="date"] {
+                                        width: 100%;
+                                        height: 38px;
+                                        @include text(var(--fs12), 'pr', 66px, 0, $black-txt-cl, none);
+                                        font-style: italic;
+                                        outline: none;
+                                        background: none;
+                                        border: 1px solid $black-txt-cl;
+                                        -webkit-padding-start: 12px;
+            
+                                        &::-webkit-calendar-picker-indicator {
+                                            -webkit-padding-end: 12px;
+                                            height: 22px;
+                                            width: 22px;
+                                            opacity: 0.7;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+            
+                                .img {
+                                    position: absolute;
+                                    top: 40%;
+                                    left: 257.5px;
+                                    transform: rotate(-90deg);
+                                    max-width: 15px;
+                                }
+                            }
+                        }
+            
+                        &__bottom {
+                            .form-group {
+                                input {
+                                    width: 100%;
+                                    height: 38px;
+                                    @include text(14px, 'pr', 66px, 0, $black-txt-cl, none);
+                                    outline: none;
+                                    background: none;
+                                    border: 1px solid $black-txt-cl;
+                                }
+                            }
+                        }
+            
+                        &__submit {
+                            padding-top: 70px;
+                            display: flex;
+            
+                            input[type=submit] {
+                                @include text(20px, 'extra', var(--lh3048), -0.5px, $main-cl, uppercase);
+                                background: $grey-cl;
+                                outline: none;
+                                border: none;
+                                border-radius: 10px;
+                                width: 100px;
+                                height: 100px;
+                                cursor: pointer;
+                            }
+            
+                            &-desc {
+                                padding-left: 20px;
+                                max-width: 205px;
+                                @include text(var(--fs12), 'pr', 24px, 0, $black-txt-cl, none);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include sm {
+            .wrap {
+                grid-template-columns: 1fr;
+                .rental {
+                    padding: 24px 20px;
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: 1fr 3fr;
+                    &__title {
+                        margin-top: 0;
+                    }
+                }
+                .from-wrap {
+                    .company-detail {
+                        .title-detail {
+                            padding-top: 36px;
+                        }
+                        .form { 
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                    .booking-detail {
+                        .form {
+                            max-width: 100%;
+
+                            &__top {
+                                grid-template-columns: repeat(2, 1fr);
+                            }
+                            
+                            &__mid {
+                                &-item {
+                                    grid-template-columns: repeat(2, 1fr);
+                            
+                                    .img {
+                                        left: 337.5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include xs {
+            .wrap {
+                .rental {
+                    grid-template-columns: 1fr 2fr;
+                    column-gap: 25px;
+                }
+                .from-wrap {
+                    .booking-detail {
+                        .form {
+                            &__top {
+                                .form-group {
+                                    .note {
+                                        width: auto;
+                                    }
+                                }
+                            }
+                            &__mid {
+                                .img {
+                                    left: 248.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include xxs {
+            .wrap {
+                padding-bottom: 50px;
+                .rental {
+                    padding: 32px 0;
+                    background: none;
+                    &__studio {
+                        padding: 21px 38px;
+                        height: auto;
+                        
+                        .title {
+                            font-size: 11px;
+                        }
+                        
+                        .number {
+                            font-size: 61.46px;
+                            line-height: 61.44px;
+                            margin-bottom: 0px;
+                        }
+                    }
+                    &__title-name {
+                        color: $black-txt-cl;
+                    }
+                    &__desc {
+                        &-title {
+                            color: $black-txt-cl;
+                        }
+                        &-content {
+                            span {
+                                color: $black-txt-cl;
+                            }
+                        }
+                    }
+                }
+                .from-wrap {
+                    .company-detail {
+                        .title-detail {
+                            padding-top: 14px;
+                        }
+                        .form {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                    .booking-detail {
+                        .studio__list {
+                            column-gap: 30px;
+                        }
+                        .form {
+                            &__top {
+                                grid-template-columns: 1fr;
+                            }
+                            &__mid {
+                                &-item {
+                                    grid-template-columns: 1fr;
+                                    .img {
+                                        position: unset;
+                                        transform: none;
+                                        margin-left: 50%;
+                                        padding: 15px 0;
+                                    }
+                                }
+                            }
+                            &__submit {
+                                padding-top: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

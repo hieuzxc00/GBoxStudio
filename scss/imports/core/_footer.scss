@@ -1,0 +1,127 @@
+// css footer
+footer {
+    padding-top: 48px;
+    .container {
+        padding-right: 20px;
+        padding-left: 20px;
+        .footertop {
+            padding-bottom: 12px;
+            display: flex;
+            &__contact {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+            }  
+            &__address {
+                display: none;
+            }
+            &__text {
+                width: 50%;
+                max-width: 220px;
+                padding-left: 10px;
+            }
+        }
+    }
+    .footerbottom {
+        background: $main-cl;
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        &__address {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 18px;
+        }
+        &__message {
+            width: 50%;
+            padding-left: 10px;
+            padding-top: 30px;
+            .from-message {
+                display: grid;
+                grid-template-columns: repeat(2, 50%);
+                column-gap: 20px;
+                .from-group {
+                    position: relative;
+                    padding-bottom: 15px;
+                    label {
+                        @include text(var(--fs12), 'pr', 20px, 0, $black-txt-cl, capitalize);
+                    }
+                    input {
+                        width: 100%;
+                        background: none;
+                        border: none;
+                        outline: none;
+                        border-bottom: 1px solid $black-txt-cl;
+                        @include text(14px, 'pr', 0, 0, $black-txt-cl, normal);
+                    }
+                    textarea {
+                        width: 100%;
+                        background: none;
+                        border: 1px solid $black-txt-cl;
+                        outline: none;
+                        resize: none;
+                        overflow: hidden;
+                        @include text(14px, 'pr', 30px, 0, $black-txt-cl, normal);
+                    }
+                    .btn-send {
+                        background: $black-txt-cl;
+                        border: none;
+                        padding: 10px 12px;
+                        text-align: center;
+                        display: inline-block;
+                        cursor: pointer;
+                        @include text(10px, 'pb', 0, 0, $white-cl, uppercase);
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+                #mail {
+                    margin-top: -45px;
+                }
+            }
+        }
+        &__copyright {
+            padding-top: 55px;
+            @include mid(true);
+            flex-direction: column;
+            .totop {
+                cursor: pointer;
+                max-width: 20px;
+            }
+            span {
+                padding-top: 9px;
+                padding-bottom: 50px;
+                @include text(10px, 'pr', var(--lh3048), 1px, $black-txt-cl, uppercase);
+            }
+        }
+    }
+    @include xs {
+        .container {
+            .footertop {
+                text-align: center;
+                flex-direction: column;
+                &__contact {
+                    width: 100%;
+                    br {
+                        display: none;
+                    }
+                }
+                &__address {
+                    display: block;
+                    padding-bottom: 15px;
+                }
+                &__text {
+                    display: none;
+                }
+            }
+        }
+        .footerbottom {
+            .container {
+                display: none;
+            }
+        }
+    }
+}

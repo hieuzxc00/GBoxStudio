@@ -1,0 +1,186 @@
+// css header
+header {
+    position: relative;
+    .headertop {
+        height: var(--height-header);
+        background: $grey-cl;
+        display: flex;
+        align-items: center;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .headertop__menubar {
+                display: inline-block;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                &-bar {
+                    width: 28px;
+                    height: 2px;
+                    background-color: $main-cl;
+                    margin: 6px 0;
+                    transition: 0.4s;
+                }
+                &.change {
+                    .bar1 {
+                        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+                        transform: rotate(-45deg) translate(-9px, 6px);
+                    }
+                    .bar2 {
+                        opacity: 0;
+                    }
+                    .bar3 {
+                        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+                        transform: rotate(45deg) translate(-5px, -3px);
+                    }
+                }
+            }
+            .headertop__logo {
+                max-width: 43px;
+                max-height: 43px;
+                a {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            .headertop__fb {
+                max-width: 10px;
+                max-height: 20px;
+                a {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .headerbottom {
+        --margin-top: 27px;
+        height: 68px;
+        &.active {
+            display: none;
+            transition: 0.3s;
+        }
+        &.fade {
+            background: $bg-cl;
+            .container {
+                .menu-wrap {
+                    border-bottom: none;
+                    box-shadow: 0 4px 2px -2px gray;
+                }
+            }
+        }
+        .container {
+            height: 100%;
+            .menu-wrap {
+                height: 100%;
+                border-bottom: 1px solid $black-txt-cl;
+                display: flex;
+                justify-content: space-between;
+                .left {
+                    margin-top: var(--margin-top);
+                }
+                
+                .mid {
+                    height: 100%;
+                    .menu {
+                        height: 100%;
+                        display: flex;
+                        li {
+                            padding: 0 30px;
+                            height: fit-content;
+                            margin-top: var(--margin-top);
+                        }
+                    }
+                }
+                
+                .right {
+                    margin-top: var(--margin-top);
+                }
+            }
+        }
+    }
+    &.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        .headertop { 
+            height: 30px;
+            transition: 0.4s;
+            .container {
+                .headertop__logo {
+                    max-width: 20px;
+                    transition: 0.4s;
+                    a {
+                        img {
+                            margin-top: 7px;
+                        }
+                    }
+                }
+                .headertop__fb {
+                    max-width: 7px;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+    @include xs {
+        &.active {
+            .headertop {
+                height: 60px;
+                .container {
+                    .headertop__logo {
+                        max-width: 35px;
+                        margin-top: 7px;
+                        a {
+                            img {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                
+                    .headertop__fb {
+                        max-width: 10px;
+                        max-height: 20px;
+                    }
+                }
+            }
+        }
+        .headertop {
+            height: 60px;
+            transition: 0.3s;
+            .container {
+                .headertop__menubar {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .headertop__logo {
+                    max-width: 35px;
+                    margin-top: 7px;
+                }
+            }
+        }
+        .headerbottom {
+            display: none;
+        }
+    }
+    @include xxs {
+        .headertop {
+            .container {
+                .headertop__menubar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    &-bar {
+                        margin: 3px 0;
+                    }
+                }
+            }
+        }
+    }
+    
+}

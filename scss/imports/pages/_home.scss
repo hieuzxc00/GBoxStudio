@@ -1,0 +1,208 @@
+.mainwrapper {
+    .content {
+        .container {
+            @include mid(true);
+            flex-direction: column;
+            position: relative;
+            &::after {
+                position: absolute;
+                content: '';
+                background: $black-txt-cl;
+                width: 320px;
+                height: 0.8px;
+                bottom: -55px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &__welcome {
+            padding-top: 52px;
+            max-width: 90px;
+            text-align: center;
+            span {
+                @include text(14px, 'light', var(--lh22), 2.8px, $black-txt-cl, uppercase);
+            }
+        }
+        &__title {
+            padding-top: 14px;
+            padding-bottom: 12px;
+            &-main {
+                position: relative;
+                h1 {
+                    @include text(20px, 'pb', var(--lh3048), 6px, $grey-cl, uppercase);
+                }
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    top: 7px;
+                    content: '';
+                    width: 97%;
+                    height: 50%;
+                    background: $main-cl;
+                    z-index: -1;
+                }
+            }
+        }
+        &__disc {
+            text-align: center;
+            max-width: 755px;
+            p {
+                @include text(var(--fs12), 'Arial', var(--lh22), -0.3px, $black-txt-cl, normal);
+                strong {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        @include xxs {
+            .container {
+                &::after {
+                    display: none;
+                }
+            }
+            &__welcome {
+                padding-top: 32px;
+            }
+            &__disc {
+                display: none;
+            }
+        }
+    }
+
+    .project {
+        padding-top: 93px;
+        .container {
+            position: relative;
+            border-bottom: 1px solid $black-txt-cl;
+            .tabs {
+                &__title {
+                    @include mid(true);
+                    &-item {
+                        @include text(var(--fs12), 'psemi', var(--lh3048), 0, $grey-txt-cl, uppercase);
+                        padding: 0 20px;
+                        cursor: pointer;
+                        &.active {
+                            color: $black-txt-cl;
+                        }
+                    }
+                }
+                &__content {
+                    padding-top: 8px;
+                    display: none;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 20px;
+                    row-gap: 30px;
+                    &-item {
+                        .img {
+                            overflow: hidden;
+                            position: relative;
+                            padding-bottom: 60.3%;
+                            height: 0;
+                            a {
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    object-fit: cover;
+                                    transform: translate(-50%, -50%) scale(1);
+                                    @include transition($t);
+                                }
+                            }
+                        }
+                    
+                        .item {
+                            padding: 20px;
+                            text-align: center;
+                            &__name {
+                                padding-top: 10px;
+                                position: relative;
+                                &::after {
+                                    position: absolute;
+                                    content: '';
+                                    width: 16px;
+                                    height: 3px;
+                                    background: $main-cl;
+                                    bottom: 8px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                }
+                                h3 {
+                                    @include text(var(--fs12), 'pb', var(--lh3048), 0, $black-txt-cl, uppercase);
+                                    @include overtext(1);
+                                    transition: $t;
+                                    &:hover {
+                                        opacity: 0.6;
+                                        transition: $t;
+                                    }
+                                }
+                            }
+                            &__info {
+                                margin-top: -8px;
+                                padding-bottom: 11px;
+                                span {
+                                    @include text (var(--fs12), 'Arial', 20px, 0, $black-txt-cl, normal);
+                                    i {
+                                        font-style: italic;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+                            .img {
+                                img {
+                                    transform: translate(-50%, -50%) scale(1.08);
+                                    @include transition($t);
+                                }
+                            }
+                        }
+                    }
+                    &.active {
+                        display: grid;
+                    }
+                }
+            }
+            .btnmore {
+                padding-bottom: 76px;
+                @include mid(true);
+                flex-direction: column;
+                &__title {
+                    padding-top: 14px;
+                    @include text(var(--fs12), 'psemi', var(--lh3048), 0, $black-txt-cl, uppercase);
+                }
+                &__icon {
+                    cursor: pointer;
+                    max-width: 16px;
+                    padding-top: 8px;
+                }
+            }
+        }
+        @include sm {
+            .container {
+                .tabs {
+                    &__content {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+            }
+        }
+        @include xxs {
+            padding-top: 0;
+            .container {
+                .tabs {
+                    // &__title {
+                    //     display: none;
+                    // }
+                    &__content {
+                        grid-template-columns: 1fr;
+                        .mb-hidden {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
